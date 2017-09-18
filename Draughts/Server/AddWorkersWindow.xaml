@@ -1,0 +1,139 @@
+﻿<Window x:Class="Server.AddWorkersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Wyszukaj i dodaj" 
+        Height="500" 
+        Width="520"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded">
+    
+    <Grid Margin="10,10,10,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <Label
+            Content="Znalezione:"
+            Grid.Column="0"
+            Grid.Row="0"
+            FontSize="15"
+            Margin="10,0,10,0">            
+        </Label>
+
+        <Label
+            Content="Dodane:"
+            Grid.Column="2"
+            Grid.Row="0"
+            FontSize="15"
+            Margin="10,0,10,0">
+        </Label>
+        
+        <ListBox
+            Name="foundWorkersListBox"
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="10,10,10,10"
+            SelectionMode="Multiple">            
+        </ListBox>
+
+        <ListBox
+            Name="addedWorkersListBox"
+            Grid.Column="2"
+            Grid.Row="1"
+            Margin="10,10,10,10"
+            SelectionMode="Multiple">
+        </ListBox>
+        
+        <Grid
+            Grid.Column="0"
+            Grid.Row="2">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Content="Zaznacz wszystko"
+                Grid.Column="0"
+                Margin="10,0,5,0"
+                Click="SelectAllFound_Click">
+            </Button>
+
+            <Button
+                Content="Odznacz wszystko"
+                Grid.Column="1"
+                Margin="5,0,10,0"
+                Click="UnselectAllFound_Click">
+            </Button>
+        </Grid>
+
+        <Grid
+            Grid.Column="2"
+            Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Content="Zaznacz wszystko"
+                Grid.Column="0"
+                Margin="10,0,10,0"
+                Click="SelectAllAdded_Click">
+            </Button>
+
+            <Button
+                Content="Odznacz wszystko"
+                Grid.Column="1"
+                Margin="10,0,10,0"
+                Click="UnselectAllAdded_Click">
+            </Button>
+        </Grid>
+
+        <Button
+            Content="OK"
+            Grid.ColumnSpan="3"
+            Grid.Row="3"
+            Margin="10,10,10,10"
+            Click="OK_Click">            
+        </Button>
+        
+        <Grid 
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="0,10,0,10"
+            VerticalAlignment="Center">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            
+            <Button
+                Content="&gt;&gt;"
+                Grid.Row="0"
+                Height="40"
+                Click="Add_Click">                
+            </Button>
+
+            <Button                
+                Content="&lt;&lt;"
+                Grid.Row="1"
+                Height="40"
+                Click="Remove_Click">
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
